@@ -2,6 +2,9 @@
     "name": "hexlet/code",
     "description": "Game",
     "type": "project",
+    "bin": [
+	    "bin/brain-games"
+    ],
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
