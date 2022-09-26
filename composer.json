@@ -8,12 +8,17 @@
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
-        }
+        },
+        "files": [
+            "src/Cli.php"
+        ]
     },
     "authors": [
         {
             "name": "AshurkovE"
         }
     ],
-    "require": {}
+    "require": {
+    	"wp-cli/php-cli-tools": "*"
+    }
 }
