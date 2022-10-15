@@ -6,6 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Games\Even\even;
 use function BrainGames\Games\Calc\calc;
+use function BrainGames\Games\Gcd\gcd;
 
 function gameLogic($gameName)
 {
@@ -19,6 +20,9 @@ function gameLogic($gameName)
             break;
         case 'calc':
             $gameData = calc();
+            break;
+        case 'gcd':
+            $gameData = gcd();
             break;
     }
 
