@@ -6,15 +6,14 @@ use Stringable;
 
 function calc()
 {
-    $gameData = [];
+    $gameData = [[]];
     $gameData['header'] = 'What is the result of the expression?';
     for ($i = 0; $i < 3; $i++) {
-        $gameData[$i]['question'] = "";
         $randNum1 = rand(0, 99);
         $randNum2 = rand(0, 99);
         (string)$sign = randSign();
         $gameData[$i]['question'] = "Question: {$randNum1} {$sign} {$randNum2}";
-        $correctAnswer = match ($sign) {
+        $correctAnswer = match ("{$sign}") {
             "*" => ($randNum1 * $randNum2),
             "+" => ($randNum1 + $randNum2),
             "-" => ($randNum1 - $randNum2),
