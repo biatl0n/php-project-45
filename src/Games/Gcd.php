@@ -11,7 +11,7 @@ function gcd()
         $randNum1 = rand(1, 199);
         $randNum2 = rand(1, 199);
         $min = min($randNum1, $randNum2);
-        $gameData[$i]['question'] = (string) "Question: {$randNum1} {$randNum2}";
+        $gameData[$i]['question'] = "Question: {$randNum1} {$randNum2}";
         $correctAnswer = checkGcd($randNum1, $randNum2, $min);
         $gameData[$i][1] = "{$correctAnswer}";
     }

@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games\Calc;
 
+use Stringable;
+
 function calc()
 {
     $gameData = [];
@@ -10,12 +12,12 @@ function calc()
     for ($i = 0; $i < 3; $i++) {
         $randNum1 = rand(0, 99);
         $randNum2 = rand(0, 99);
-        $sign = randSign();
-        $gameData[$i]['question'] = (string) "Question: {$randNum1} {$sign} {$randNum2}";
+        $sign = (string) randSign();
+        $gameData[$i]['question'] = "Question: {$randNum1} {$sign} {$randNum2}";
         $correctAnswer = match ($sign) {
-            "*" => (int) ($randNum1 * $randNum2),
-            "+" => (int) ($randNum1 + $randNum2),
-            "-" => (int) ($randNum1 - $randNum2),
+            "*" => ($randNum1 * $randNum2),
+            "+" => ($randNum1 + $randNum2),
+            "-" => ($randNum1 - $randNum2),
         };
         $gameData[$i][1] = "{$correctAnswer}";
     }

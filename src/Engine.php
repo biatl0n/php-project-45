@@ -11,7 +11,8 @@ function gameLogic(string $gameName)
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    $gameData = call_user_func('BrainGames\Games\\' . $gameName);
+    $callBackFunc = 'BrainGames\Games\\' . $gameName;
+    $gameData = call_user_func($callBackFunc);
     $correctAnswersCount = 0;
     line($gameData['header']);
     do {

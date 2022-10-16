@@ -4,6 +4,7 @@ namespace BrainGames\Games\Progression;
 
 function progression()
 {
+    $gameData = [];
     $gameData['header'] = 'What number is missing in the progression?';
     for ($j = 0; $j < 3; $j++) {
         $resultArr = [];
