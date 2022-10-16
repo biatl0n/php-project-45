@@ -13,14 +13,14 @@ function progression()
         $randAnswer = mt_rand($randStart, $randEnd - 1);
         for ($i = $randStart; $i < $randEnd; $i++) {
             if ($i !== $randAnswer) {
-                $resultArr["Progression1"][] = pow(2, $i);
+                $resultArr["Progression1"][] = $i + 1;
                 $resultArr["Progression2"][] = $i + $i;
                 $resultArr["Progression3"][] = $i * 3;
             } else {
                 $resultArr["Progression1"][] = "..";
                 $resultArr["Progression2"][] = "..";
                 $resultArr["Progression3"][] = "..";
-                $resultArr["Progression1Answer"] = pow(2, $i);
+                $resultArr["Progression1Answer"] = $i + 1;
                 $resultArr["Progression2Answer"] = $i + $i;
                 $resultArr["Progression3Answer"] = $i * 3;
             }
