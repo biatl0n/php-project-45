@@ -29,10 +29,10 @@ function progression()
         $rand = rand(1, 3);
         $randProgression = "Progression" . $rand;
         $correctAnswer = "Progression" . $rand . "Answer";
-        $question = implode(" ", $resultArr["$randProgression"]);
+        $question = implode(" ", $resultArr[$randProgression]);
 
         $gameData[$j] = ['question' => "Question: {$question}"];
-        $gameData[$j][1] = "{$resultArr["$correctAnswer"]}";
+        $gameData[$j][1] = "{$resultArr[$correctAnswer]}";
     }
     return $gameData;
 }
