@@ -23,6 +23,8 @@ function checkGcd(int $randNum1, int $randNum2, int $min)
     for ($i = 1; $i <= $min; $i++) {
         if ($randNum1 % $i === 0 && $randNum2 % $i === 0) {
             $correctAnswer = $i;
+        } else {
+            $correctAnswer = 1;
         }
     }
     return $correctAnswer;
