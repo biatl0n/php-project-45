@@ -3,4 +3,4 @@
 require_once 'vendor/autoload.php';
 use function BrainGames\Engine\gameLogic;
 
-gameLogic('calc');
+gameLogic('Calc\calc');

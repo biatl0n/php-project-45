@@ -1,41 +1,20 @@
 <?php
 
 namespace BrainGames\Engine;
-
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Games\Even\even;
-use function BrainGames\Games\Calc\calc;
-use function BrainGames\Games\Gcd\gcd;
-use function BrainGames\Games\Progression\progression;
 
 function gameLogic($gameName)
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-
-    switch ($gameName) {
-        case 'even':
-            $gameData = even();
-            break;
-        case 'calc':
-            $gameData = calc();
-            break;
-        case 'gcd':
-            $gameData = gcd();
-            break;
-        case 'progression':
-            $gameData = progression();
-            break;
-    }
-
+    $gameData = call_user_func('BrainGames\Games\\'.$gameName);
     $correctAnswersCount = 0;
     line($gameData['header']);
     do {
         line("{$gameData[$correctAnswersCount]['question']}");
         $answer = prompt('Your answer');
-
         if (mb_strtolower($answer) === $gameData[$correctAnswersCount][1]) {
             line('Correct!');
             $correctAnswersCount++;
