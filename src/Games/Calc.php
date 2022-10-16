@@ -11,11 +11,11 @@ function calc()
         $randNum1 = rand(0, 99);
         $randNum2 = rand(0, 99);
         $sign = randSign();
-        $gameData[$i]['question'] = "Question: {$randNum1} {$sign} {$randNum2}";
+        $gameData[$i]['question'] = (string) "Question: {$randNum1} {$sign} {$randNum2}";
         $correctAnswer = match ($sign) {
-            "*" => $randNum1 * $randNum2,
-            "+" => $randNum1 + $randNum2,
-            "-" => $randNum1 - $randNum2,
+            "*" => (int) ($randNum1 * $randNum2),
+            "+" => (int) ($randNum1 + $randNum2),
+            "-" => (int) ($randNum1 - $randNum2),
         };
         $gameData[$i][1] = "{$correctAnswer}";
     }
