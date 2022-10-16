@@ -21,7 +21,7 @@ function gameLogic($gameName)
             $correctAnswersCount++;
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$gameData[$correctAnswersCount][1]}'.");
-            line("Let's try again, {$name}");
+            line("Let's try again, {$name}!");
             break;
         }
     } while ($correctAnswersCount !== 3);
