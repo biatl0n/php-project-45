@@ -5,9 +5,9 @@ namespace BrainGames\Games\Gcd;
 function gcd()
 {
     $gameData = [];
-    $correctAnswer = 0;
     $gameData['header'] = 'Find the greatest common divisor of given numbers.';
     for ($i = 0; $i < 3; $i++) {
+        $correctAnswer = '';
         $randNum1 = rand(1, 199);
         $randNum2 = rand(1, 199);
         $min = min($randNum1, $randNum2);
