@@ -10,12 +10,18 @@ function gcd()
         $randNum2 = rand(1, 199);
         $min = min($randNum1, $randNum2);
         $gameData[$i]['question'] = "Question: {$randNum1} {$randNum2}";
-        for ($j = 1; $j <= $min; $j++) {
-            if ($randNum1 % $j === 0 && $randNum2 % $j === 0) {
-                $correctAnswer  = $j;
-            }
-        }
+        $correctAnswer = checkGcd($randNum1, $randNum2, $min);
         $gameData[$i][1] = "{$correctAnswer}";
     }
     return $gameData;
+}
+
+function checkGcd($randNum1, $randNum2, $min)
+{
+    for ($i = 1; $i <= $min; $i++) {
+        if ($randNum1 % $i === 0 && $randNum2 % $i === 0) {
+            $correctAnswer = $i;
+        }
+    }
+    return $correctAnswer;
 }
