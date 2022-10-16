@@ -1,6 +1,7 @@
 <?php
 
 namespace BrainGames\Engine;
+
 use function cli\line;
 use function cli\prompt;
 
@@ -9,7 +10,7 @@ function gameLogic($gameName)
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    $gameData = call_user_func('BrainGames\Games\\'.$gameName);
+    $gameData = call_user_func('BrainGames\Games\\' . $gameName);
     $correctAnswersCount = 0;
     line($gameData['header']);
     do {

@@ -8,16 +8,14 @@ function prime()
     for ($i = 0; $i < 3; $i++) {
         $randNum = rand(0, 999);
         $gameData[$i]['question'] = "Question: {$randNum}";
-        for($j = 2; $j < $randNum; $j++){
+        for ($j = 2; $j < $randNum; $j++) {
             $correctAnswer = 'yes';
-            if($randNum % $j == 0){
+            if ($randNum % $j == 0) {
                 $correctAnswer = 'no';
                 break;
             }
         }
         $gameData[$i][1] = "{$correctAnswer}";
     }
-    return($gameData);
+    return ($gameData);
 }
-
-prime();
