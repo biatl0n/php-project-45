@@ -12,7 +12,7 @@ function gameLogic(string $gameName)
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     $callBackFunc = 'BrainGames\Games\\' . $gameName;
-    $gameData = $callBackFunc();
+    $gameData = is_callable($callBackFunc) ? $callBackFunc() : "";
     $correctAnswersCount = 0;
     line($gameData['header']);
     do {
