@@ -30,7 +30,8 @@ function progression()
         $randProgression = "Progression" . $rand;
         $correctAnswer = "Progression" . $rand . "Answer";
         $question = implode(" ", $resultArr["$randProgression"]);
-        $gameData[$i] = ['question' => "Question: {$question}"];
+
+        $gameData[$j] = ['question' => "Question: {$question}"];
         $gameData[$j][1] = "{$resultArr["$correctAnswer"]}";
     }
     return $gameData;
