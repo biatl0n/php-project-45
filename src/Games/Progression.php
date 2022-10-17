@@ -6,37 +6,37 @@ function progression()
 {
     $gameData = [];
     $gameData['header'] = 'What number is missing in the progression?';
-    for ($j = 0; $j < 3; $j++) {
-        $resultArr = [];
-        $randStart = mt_rand(1, 20);
-        $randEnd = $randStart + 10;
 
-        $randAnswer = mt_rand($randStart, $randEnd - 1);
-        for ($i = $randStart; $i < $randEnd; $i++) {
-            if ($i !== $randAnswer) {
-                $resultArr["Progression1"][] = $i + 1;
-                $resultArr["Progression2"][] = $i + $i;
-                $resultArr["Progression3"][] = $i * 3;
+    for ($k = 0; $k < 3; $k++) {
+        $correctAnswer = "";
+        $question = "";
+        $randStart = rand(0, 20);
+        $randEnd = $randStart + 10;
+        $randJ = rand(1, 20);
+        $randProgression = rand(0, 2);
+        $randPosition = rand($randStart, $randEnd - 1);
+
+        for ($i = $randStart, $j = $randJ; $i < $randEnd; $i++) {
+            switch ($randProgression) {
+                case 0:
+                    $j *= 2;
+                    break;
+                case 1:
+                    $j++;
+                    break;
+                case 2:
+                    $j += 3;
+                    break;
+            }
+            if ($i !== $randPosition) {
+                $question .= "{$j} ";
             } else {
-                $resultArr["Progression1"][] = "..";
-                $resultArr["Progression2"][] = "..";
-                $resultArr["Progression3"][] = "..";
-                $resultArr["Progression1Answer"] = $i + 1;
-                $resultArr["Progression2Answer"] = $i + $i;
-                $resultArr["Progression3Answer"] = $i * 3;
+                $question .= ".. ";
+                $correctAnswer = $j;
             }
         }
-        $rand = rand(1, 3);
-        $randProgression = "Progression" . $rand;
-        $correctAnswer = "Progression" . $rand . "Answer";
-        if ($randProgression) {
-            $question = implode(" ", $resultArr[$randProgression]);
-        } else {
-            $randProgression = "";
-        }
-
-        $gameData[$j] = ['question' => "Question: {$question}"];
-        $gameData[$j][1] = "$resultArr[$correctAnswer]";
+        $gameData[$k] = ['question' => "Question: {$question}"];
+        $gameData[$k][1] = "{$correctAnswer}";
     }
     return $gameData;
 }
