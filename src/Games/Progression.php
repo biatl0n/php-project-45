@@ -19,7 +19,7 @@ function progression()
         for ($i = $randStart, $j = $randJ; $i < $randEnd; $i++) {
             switch ($randProgression) {
                 case 0:
-                    $j *= 2;
+                    $j += 2;
                     break;
                 case 1:
                     $j++;
